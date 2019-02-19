@@ -7,79 +7,63 @@ use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index()
+  {
+    $grades = Grade::all();
+    return view('grades.index', ['grades' => $grades]);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function create()
+  {
+    return view('grades.create');
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+  public function store(Request $request)
+  {
+    $grade = Grade::create([
+      'name' => $reques->name
+    ]);
+    
+    if( !$grade ){
+      $request->session()->flash('fail', 'Creation was failure!');
+      return back()->withInput();
     }
+    
+    $request->session()->flash('success', 'Creation was successful!');
+    return view('grades.show', ['grade' => $grade]);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Grade $grade)
-    {
-        //
-    }
+  public function show(Grade $grade)
+  {
+    return view('grades.show', ['grade' => $grade]);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Grade $grade)
-    {
-        //
-    }
+  public function edit(Grade $grade)
+  {
+    return view('grades.edit', ['grade' => $grade]);
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Grade $grade)
-    {
-        //
+  public function update(Request $request, Grade $grade)
+  {
+    $grade = ( $request->name ) ? $request->name : $grade->name;
+    
+    if( !$grade->save() ){
+      $request->session()->flash('fail', 'Edition was failure!');
+      return back()->withInput();
     }
+    
+    $request->session()->flash('success', 'Edition was successful!');
+    return view('grades.show', ['grade' => $grade]);
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Grade  $grade
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Grade $grade)
-    {
-        //
+  public function destroy(Grade $grade)
+  {
+    if( !$grade->delete() ){
+      $request->session()->flash('fail', 'Deletion was failure!');
+      return back();
     }
+    
+    $request->session()->flash('success', 'Deletion was successful!');
+    return redirect()->route('grades.index');
+  }
 }
