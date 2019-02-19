@@ -9,4 +9,8 @@ class Enrolment extends Model
   public function section(){
     return $this->belongsTo('App\Section');
   }
+  
+  public function student(){
+    return $this->belongsTo('App\Student');
+  }
 }

@@ -9,4 +9,8 @@ class Student extends Model
   public function agent(){
     return $this->belongsTo('App\Agent');
   }
+  
+  public function enrolments(){
+    return $this->hasMany('App\Enrolment');
+  }
 }
