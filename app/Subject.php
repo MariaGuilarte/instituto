@@ -10,7 +10,7 @@ class Subject extends Model
     return $this->belongsTo('App\Grade');
   }
   
-  public function test(){
+  public function tests(){
     return $this->hasMany('App\Test');
   }
   
