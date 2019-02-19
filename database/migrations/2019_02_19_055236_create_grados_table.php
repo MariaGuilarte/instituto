@@ -6,21 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateGradosTable extends Migration
 {
-    public function up()
-    {
-        Schema::create('grados', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
-    }
+  public function up()
+  {
+    Schema::create('grados', function (Blueprint $table) {
+      $table->increments('id');
+      $table->string('name');
+      $table->timestamps();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('grados');
-    }
+  public function down()
+  {
+    Schema::dropIfExists('grados');
+  }
 }

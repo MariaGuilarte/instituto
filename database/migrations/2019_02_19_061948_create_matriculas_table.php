@@ -4,20 +4,22 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAsignaturasTable extends Migration
+class CreateMatriculasTable extends Migration
 {
   public function up()
   {
-    Schema::create('asignaturas', function (Blueprint $table) {
+    Schema::create('matriculas', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('name');
+      $table->unsignedInteger('schoolyear_id');
+      $table->unsignedInteger('alumno_id');
       $table->unsignedInteger('grado_id');
+      $table->unsignedInteger('seccion_id');
       $table->timestamps();
     });
   }
 
   public function down()
   {
-    Schema::dropIfExists('asignaturas');
+    Schema::dropIfExists('matriculas');
   }
 }
