@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enrolment extends Model
 {
+  public function schoolyear(){
+    return $this->belongsTo('App\Schoolyear');
+  }
+  
   public function section(){
     return $this->belongsTo('App\Section');
   }
@@ -14,7 +18,7 @@ class Enrolment extends Model
     return $this->belongsTo('App\Student');
   }
   
-  public function schoolyear(){
-    return $this->belongsTo('App\Schoolyear');
+  public function attendances(){
+    return $this->hasMany('App\Attendance');
   }
 }
