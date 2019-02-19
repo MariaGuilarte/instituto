@@ -13,4 +13,8 @@ class Student extends Model
   public function enrolments(){
     return $this->hasMany('App\Enrolment');
   }
+  
+  public function scores(){
+    return $this->hasMany('App\Score');
+  }
 }
