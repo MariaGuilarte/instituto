@@ -18,7 +18,7 @@ class Subject extends Model
     return $this->hasMany('App\Teaching');
   }
   
-  public function enrolment(){
-    return $this->belongsTo('App\Enrolment');
+  public function attendances(){
+    return $this->hasMany('App\Attendance');
   }
 }
