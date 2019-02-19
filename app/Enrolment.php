@@ -13,4 +13,8 @@ class Enrolment extends Model
   public function student(){
     return $this->belongsTo('App\Student');
   }
+  
+  public function schoolyear(){
+    return $this->belongsTo('App\Schoolyear');
+  }
 }

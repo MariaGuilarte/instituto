@@ -9,4 +9,8 @@ class Schoolyear extends Model
   public function teachings(){
     return $this->hasMany('App\Teaching');
   }
+  
+  public function enrolments(){
+    return $this->hasMany('App\Enrolment');
+  }
 }
