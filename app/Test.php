@@ -17,4 +17,8 @@ class Test extends Model
   public function section(){
     return $this->belongsTo('App\Section');
   }
+  
+  public function scores(){
+    return $this->hasMany('App\Score');
+  }
 }
