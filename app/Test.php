@@ -13,4 +13,8 @@ class Test extends Model
   public function schoolyear(){
     return $this->belongsTo('App\Schoolyear');
   }
+  
+  public function section(){
+    return $this->belongsTo('App\Section');
+  }
 }

@@ -13,4 +13,8 @@ class Section extends Model
   public function enrolments(){
     return $this->belongsTo('App\Enrolment');
   }
+  
+  public function tests(){
+    return $this->hasMany('App\Test');
+  }
 }
