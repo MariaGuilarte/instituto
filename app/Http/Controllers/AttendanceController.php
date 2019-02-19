@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Schoolyear;
+use App\Attendance;
 use Illuminate\Http\Request;
 
-class SchoolyearController extends Controller
+class AttendanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SchoolyearController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function show(Schoolyear $schoolYear)
+    public function show(Attendance $attendance)
     {
         //
     }
@@ -52,10 +52,10 @@ class SchoolyearController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function edit(Schoolyear $schoolYear)
+    public function edit(Attendance $attendance)
     {
         //
     }
@@ -64,10 +64,10 @@ class SchoolyearController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Schoolyear $schoolYear)
+    public function update(Request $request, Attendance $attendance)
     {
         //
     }
@@ -75,10 +75,10 @@ class SchoolyearController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Attendance  $attendance
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Schoolyear $schoolYear)
+    public function destroy(Attendance $attendance)
     {
         //
     }

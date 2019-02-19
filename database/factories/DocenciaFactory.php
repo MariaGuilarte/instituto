@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Docencia::class, function (Faker $faker) {
+$factory->define(App\Teaching::class, function (Faker $faker) {
     return [
         //
     ];

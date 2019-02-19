@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Calificacion::class, function (Faker $faker) {
+$factory->define(App\Score::class, function (Faker $faker) {
     return [
         //
     ];

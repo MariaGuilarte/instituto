@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Schoolyear;
+use App\Student;
 use Illuminate\Http\Request;
 
-class SchoolyearController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SchoolyearController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Schoolyear $schoolYear)
+    public function show(Student $student)
     {
         //
     }
@@ -52,10 +52,10 @@ class SchoolyearController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Schoolyear $schoolYear)
+    public function edit(Student $student)
     {
         //
     }
@@ -64,10 +64,10 @@ class SchoolyearController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Schoolyear $schoolYear)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -75,10 +75,10 @@ class SchoolyearController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Schoolyear  $schoolYear
+     * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Schoolyear $schoolYear)
+    public function destroy(Student $student)
     {
         //
     }
