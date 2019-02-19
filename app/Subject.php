@@ -13,4 +13,8 @@ class Subject extends Model
   public function test(){
     return $this->hasMany('App\Test');
   }
+  
+  public function teachings(){
+    return $this->hasMany('App\Teaching');
+  }
 }
